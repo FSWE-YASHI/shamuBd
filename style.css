@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: radial-gradient(circle at top, #5f9eff, #000);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    overflow: hidden;
+}
+
+.card {
+    background: rgba(0, 0, 0, 10);
+    border: 3px solid #5fe6ff;
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 0 30px rgba(95, 162, 255, 0.6);
+    animation: fadeIn 2.5s ease;
+}
+
+.card h1 {
+    font-size: 2.1rem;
+    color: #5f9eff;
+    margin-bottom: 10px;
+}
+
+.card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #cce2ff;
+}
+
+.card p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+    color: #d6e9ff;
+}
+
+.btn {
+    background: linear-gradient(135deg, #5f9eff, #2f67ff);
+    border: none;
+    padding: 12px 30px;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 15px rgba(95, 162, 255, 0.6);
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(95, 162, 255, 1);
+}
+
+.message {
+    margin-top: 20px;
+    display: none;
+    font-size: 1.1rem;
+    color: #b3d5ff;
+    animation: pop 1.5s ease;
+}
+
+.balloon {
+    position: absolute;
+    bottom: -100px;
+    width: 40px;
+    height: 55px;
+    border-radius: 50% 50% 45% 45%;
+    animation: floatUp 6s linear infinite;
+}
+
+.balloon::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 20px;
+    background: #fff;
+    bottom: -20px;
+    left: 50%;
+}
+
+/* IMAGE ROTATION */
+
+.circle {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin-left: 10%;
+    margin-top: 25px;
+    animation: rotate 12s linear infinite;
+    display: none;
+}
+
+.circle:hover {
+    animation: rotate 7s linear infinite;
+}
+
+.item {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #5f9eff;
+    box-shadow: 0 0 20px #5f9eff;
+    background: #111;
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item1 { top: 0; left: 50%; transform: translateX(-50%); }
+.item2 { bottom: 20px; left: 0; }
+.item3 { bottom: 20px; right: 0; }
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* BALLOON COLORS */
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+        background: #0049ff;
+    }
+    50% {
+        background: #5fb0ff;
+    }
+    100% {
+        transform: translateY(-120vh);
+        background: #c8e6ff;
+    }
+}
+
+@keyframes fadeIn {
+    from { transform: scale(1.8); }
+    to { transform: scale(1); }
+}
+
+@keyframes pop {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+}
